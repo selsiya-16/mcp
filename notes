@@ -28,6 +28,8 @@ MCP   -  MCP provides a standardized way for AI applications to discover and use
 
 MCP does not replace APIs. An MCP server can use APIs internally to communicate with external services.
 
+03/09/26
+
 Why MCP is Needed
 
 Without MCP, an AI application may need separate integrations for every external service.
