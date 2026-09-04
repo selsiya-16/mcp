@@ -1,92 +1,67 @@
 What is MCP?
-
 MCP (Model Context Protocol) is a standardized protocol used to connect AI applications with external tools, data, and services.
-
 MCP Components   
-
 MCP Host    -  The AI application that provides the overall AI experience.    
-
 MCP Client  -  The component inside the host that communicates with MCP servers.  
-
 MCP Server  -  Exposes tools, resources, and prompts to MCP clients.  
-
 Tool	    -  An executable function that allows the AI to perform an action.
-
 Resource	-  Data or context that can be provided to AI.  
-
 MCP Architecture
-
 An AI application can use an MCP server that provides a calculator tool.
-
 How MCP Works
-
 MCP and API
-
 API   -  An API (Application Programming Interface) allows one software application or service to communicate with another software application or service.
-
 MCP   -  MCP provides a standardized way for AI applications to discover and use external tools, data, and services.
-
 MCP does not replace APIs. An MCP server can use APIs internally to communicate with external services.
 
 03/09/26
 
 Why MCP is Needed
-
 Without MCP, an AI application may need separate integrations for every external service.
-
 For example:
-
-AI Application
-   
+AI Application 
 Gmail API
-  
-GitHub API
-   
+GitHub API  
 Slack API
-
 Database API
-
 Each integration can have different APIs, authentication methods, request formats, and response formats.
-
 MCP provides a standard protocol between the AI application and these capabilities:
-
 The AI application can interact with MCP servers using a common protocol instead of requiring a completely different integration pattern for every service.
-
 MCP is a Protocol, Not an AI Model. MCP is not an AI model and it does not generate answers by itself.
-
 LLM decides what it needs
-
 MCP Client
-
 MCP protocol
-
 MCP Server
-
 Tool
-
 Resource
-
 Prompt
-
 External system
-
 The model provides the intelligence/reasoning. MCP provides the standardized way to access external capabilities.
-
 MCP Host - The MCP Host is the AI application that provides the overall user experience.
-
 Examples can include:
-
 Claude
 VS Code
 Cursor
 Your own AI application
-
 The host manages one or more MCP clients.
-
 MCP Host
-
 MCP Client → Server A
-
 MCP Client → Server B
-
 MCP Client → Server C
+
+04/09/2026
+
+MCP Hands-on – Groq Integration
+MCP Client - Created mcp_client.py to connect to the MCP server using ClientSession and stdio_client.
+Starts the MCP server.
+Initializes the MCP session.
+Lists the available tools.
+Calls an MCP tool.
+MCP Inspector - Used MCP Inspector to visually test the MCP server and its available tools.
+The Inspector helps verify that the MCP server is running and that its tools are exposed correctly.
+Groq Integration - Created groq_mcp.py to connect Groq LLM with the MCP server.
+MCP allows an AI application to communicate with external tools in a standardized way.
+MCP Server exposes tools.
+MCP Client connects to the server and invokes tools.
+Groq can decide which MCP tool to use based on the user's request.
+Successfully implemented Groq → MCP Client → MCP Server → Tool execution.
