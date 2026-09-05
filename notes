@@ -65,3 +65,29 @@ MCP Server exposes tools.
 MCP Client connects to the server and invokes tools.
 Groq can decide which MCP tool to use based on the user's request.
 Successfully implemented Groq → MCP Client → MCP Server → Tool execution.
+
+05/09/26
+
+An MCP Resource provides data or information that an MCP client
+can read using a resource URI.
+Resource URI:
+customers://all
+The resource uses the existing `list_customers()` function
+to retrieve customer data from the SQLite database.
+MCP vs Traditional API Integration
+Traditional API - An application usually needs to know:
+API endpoint
+Authentication method
+Request format
+Response format
+API-specific implementation
+Different APIs can have completely different interfaces.
+MCP Security - Security is an important part of MCP because MCP servers can expose tools that interact with external systems.
+Important considerations include:
+Authentication
+Authorization
+Input validation
+Access control
+Protecting API keys
+Limiting tool permissions
+Validating tool arguments

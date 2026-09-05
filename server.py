@@ -8,7 +8,6 @@ from database import (
     delete_customer
 )
 
-
 mcp = MCPServer("MCP Learning Server")
 
 @mcp.tool()
@@ -62,6 +61,14 @@ def remove_customer(customer_id: int) -> str:
     """Delete a customer by ID."""
 
     return delete_customer(customer_id)
+
+@mcp.resource("customers://all")
+def customer_resource() -> str:
+    """Provide all customers as a resource."""
+
+    customers = list_customers()
+
+    return str(customers)
 
 if __name__ == "__main__":
     create_database()
